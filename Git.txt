@@ -1,0 +1,104 @@
+Date: February 16,2016
+Title: Git
+
+Key points:
+
+	Learned Branching Model 
+	Basic Git commands
+	Branching
+	Merge Tools
+	Git Tools
+	Fork
+	SSH vd Http
+	Stash and Jira
+	
+Branching Model:
+
+	Terms:
+	
+		Features - refer to functionality
+		Bug - refer to detection of error during pre production phase
+		Bugfix - branch that deals with bug is named as Bugfix
+		Defect - error found post production
+		Defectfix - branch that deals with defect 
+	
+	Branching Hirarchy:
+	
+				Master - root
+		defectfix	Develop - between sprint start and code freeze 
+						release - between code freeze and sprint stop 
+							bugfix
+						
+		bugfix is branched from release.
+		defectfix is branched from Master
+		features are added to develop branch.
+		
+Git Tools:
+
+	Source Tree
+	Git Bash
+	Github
+	
+Merge Tools: 
+
+	Beyond compare
+	Meld
+	Kdiff
+	
+	Worked with Meld. To add meld in gitbash,do 
+	
+	git config --global merge.tool meld
+    git config --global mergetool.meld.path c:/Progra~2/meld/bin/
+	
+	during conflit, just type git mergetool. meld willopen automatically
+	
+Basic Git commands: 
+
+	git init
+	git status
+	git add
+	git commit
+	git remote add
+	git push
+	git pull
+	git diff
+		git diff HEAD - difference between Last commited and present. Same result as git diff --staged if the changes are staged 
+		git diff --staged - deifference between Last commited and staged
+	git log -10 - shows last 10 commits
+	git reset filename - makes file unstaged (by default its a soft reset)
+	git checkout -- filename - after doing reset, the file will be an unstaged file. To remove the changes completely, we do checkout 
+	git reset --hard - reverts back to last commit
+	
+Stashing:
+
+used when you don’t want to do a commit of half-done work but u need to store it somewhere and later need to work on it. 
+
+git stash - to stash 
+git stash list - to lsi out the stashed files
+git stash apply - to restash. doesnt drop ny default
+git stash drop - drops the stash
+git stash pop - to restash and drop. 
+	
+Branching:
+
+	git branch newBranchName - creates a new branch
+	git branch - shows all branch
+	git checkout branchName - to shift to that particular branch
+	git merge branchName - merges the mentioned branch with the present working branch. If I am in master branch and I call, git merge demo, the demo is merged with master  
+	git branch -d branchName - deletes the branch
+	
+Fork:
+	creates a copy of the forked repository in our repository. We can make changes to it and send a pull request to the admin of that repository. 
+
+SSH vs Http:
+
+	SSH doesnt require a password for pushing. To set SSH refer https://help.github.com/articles/generating-an-ssh-key/
+	
+Git ignore: NEED MORE CLARIFICATION
+	
+
+
+
+
+	
+		
